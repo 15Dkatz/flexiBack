@@ -1,4 +1,4 @@
-myApp.controller('BoardController', ['$scope', '$rootScope', 'Authentication', 'sharedPosts', '$ionicPopup', '$timeout', '$firebaseAuth', 'FIREBASE_URL',
+myApp.controller('ListController', ['$scope', '$rootScope', 'Authentication', 'sharedPosts', '$ionicPopup', '$timeout', '$firebaseAuth', 'FIREBASE_URL',
   function($scope, $rootScope, Authentication, sharedPosts, $ionicPopup, $timeout, $firebaseAuth, FIREBASE_URL) {
     var ref = new Firebase(FIREBASE_URL);
     var auth = $firebaseAuth(ref);
@@ -162,8 +162,8 @@ myApp.controller('BoardController', ['$scope', '$rootScope', 'Authentication', '
                 e.preventDefault();
               } else {
 
-                $scope.newPost.firstName = "anonymous";
-                $scope.newPost.lastName = "post";
+                $scope.newPost.firstName = "Anonymous";
+                $scope.newPost.lastName = "Poster";
                 if (sharedPosts.getFirstname()) {
                     $scope.newPost.firstName = sharedPosts.getFirstname();
                     $scope.newPost.lastName = sharedPosts.getLastname();

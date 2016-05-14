@@ -1,4 +1,4 @@
-var myApp = angular.module('giveFlexiApp', ['ionic', 'firebase'])
+var myApp = angular.module('WeSplitApp', ['ionic', 'firebase'])
    .constant('FIREBASE_URL', 'https://giveflexi.firebaseio.com/');
 
 
@@ -32,36 +32,36 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 
   // board *********
-  .state('tab.give', {
-      url: '/give',
+  .state('tab.list', {
+      url: '/list',
       views: {
-        'tab-give': {
-          templateUrl: 'templates/tab-give.html',
-          controller: 'BoardController'
+        'tab-list': {
+          templateUrl: 'templates/tab-list.html',
+          controller: 'ListController'
         }
       }
     })
 
-  .state('tab.get', {
-      url: '/get',
-      views: {
-        'tab-get': {
-          templateUrl: 'templates/tab-get.html',
-          controller: 'BoardController'
-        }
-      }
-    })
+  // .state('tab.get', {
+  //     url: '/get',
+  //     views: {
+  //       'tab-get': {
+  //         templateUrl: 'templates/tab-get.html',
+  //         controller: 'BoardController'
+  //       }
+  //     }
+  //   })
   // **************
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountController'
-      }
-    }
-  })
+  // .state('tab.account', {
+  //   url: '/account',
+  //   views: {
+  //     'tab-account': {
+  //       templateUrl: 'templates/tab-account.html',
+  //       controller: 'AccountController'
+  //     }
+  //   }
+  // })
 
   .state('login', {
     url: '/login',
@@ -75,7 +75,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     controller: 'RegistrationController'
   })
 
-  $urlRouterProvider.otherwise('/tab/give');
+  $urlRouterProvider.otherwise('/tab/list');
 
 });
 
